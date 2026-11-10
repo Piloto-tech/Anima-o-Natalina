@@ -1,0 +1,99 @@
+/* Fundo da página */
+body {
+    background: linear-gradient(to bottom, #0b2447, #19376d);
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-family: Arial;
+}
+
+h1 {
+    color: #ffd700;
+    padding-top: 20px;
+}
+
+.mensagem {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+
+.neve {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(4px 4px at 10% 5%, white, transparent);
+    background-size: 200px 200px;
+    animation: cair 8s linear infinite;
+}
+
+@keyframes cair {
+    from { background-position: 0 0; }
+    to   { background-position: 0 100vh; }
+}
+
+
+.arvore {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 160px solid #228b22;
+    margin: 30px auto;
+    position: relative;
+    /* Animação 1: árvore balança */
+    animation: balanco 3s ease-in-out infinite alternate;
+}
+
+.estrela {
+    position: absolute;
+    top: -20px;
+    left: -12px;
+    font-size: 30px;
+    /* 2 animações ao mesmo tempo! */
+    animation: brilho 1s infinite alternate, girar 6s linear infinite;
+}
+
+@keyframes balanco {
+    from { transform: rotate(-3deg); }
+    to   { transform: rotate(3deg); }
+}
+
+@keyframes brilho {
+    from { opacity: 0.6; }
+    to   { opacity: 1; }
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+
+.presente {
+    width: 60px;
+    height: 50px;
+    background: #c41e3a;
+    margin: 0 auto;
+    position: relative;
+    /* Animação: sobe e desce */
+    animation: sobe 2s ease-in-out infinite;
+}
+
+.presente::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    background: #ffd700;
+    left: 26px;
+}
+
+@keyframes sobe {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
